@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #1565c0, #7b1fa2);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Logout */
+.logout-btn {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 18px;
+    background: #5e35b1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.logout-btn:hover {
+    opacity: 0.85;
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    width: 220px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h3 {
+    margin: 0 0 10px;
+}
+
+.dashboard-card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Form */
+.form-section {
+    width: 80%;
+    max-width: 500px;
+    margin: 25px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-section button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+/* Heading */
+h2 {
+    color: #3548b8;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #4a63e7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.edit {
+    background: #00897b;
+    color: white;
+}
+
+.delete {
+    background: #5e35b1;
+    color: white;
+}
+
+/* Student Section */
+.students {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    overflow-x: auto;
+}
+
+.students h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Search Box */
+.search-box {
+    text-align: center;
+    margin: 15px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 300px;
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Table */
+.students table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.students th {
+    background: #5e35b1;
+    color: white;
+    padding: 12px;
+}
+
+.students td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.students tr:hover {
+    background: #f3e5f5;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    background: #3548b8;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .form-section {
+        width: 90%;
+        padding: 25px 15px;
+    }
+
+    .students {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .students table {
+        min-width: 600px;
+    }
+
+    .dashboard-card {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .search-box input {
+        width:90%;
+    }
+}
