@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    🎓 Student Management System
+</header>
+
+<div class="form-section">
+    <h2>Edit Student</h2>
+
+    <form method="POST">
+
+        <input type="text" name="name" value="{{ student['name'] }}" placeholder="Student Name" required>
+
+        <input type="text" name="roll_no" value="{{ student['roll_no'] }}" placeholder="Roll Number" required>
+
+        <input type="text" name="course" value="{{ student['course'] }}" placeholder="Course" required>
+
+        <button type="submit">Update Student</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Back to Student List</a>
+</div>
+
+</body>
+</html>
