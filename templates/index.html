@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <a href="/login"class="logout-btn">logout</a>
+    <div class="search-box"> 
+    <div class="dashboard-card">
+        <h3>total students</h3>
+        <p>{{ total_students}}</p>
+        <small>students registered in the system</small>
+</div>
+</div>
+
+<header>
+
+    <h1>🎓 Student Management System</h1>
+    <p>Manage your students easily</p>
+
+</header>
+
+
+<section class="form-section">
+
+    <h2>Add Student</h2>
+    <p>Enter student details below</p>
+    {% if request.args.get('message')%}
+    <p class="success-message">{{request.args.get('message')}}</p>
+    {% endif %}
+
+    <form action="/add" method="POST">
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Student Name"
+            required
+        >
+
+        <input
+            type="text"
+            name="roll_no"
+            placeholder="Roll Number"
+            required
+        >
+
+        <input
+            type="text"
+            name="course"
+            placeholder="Course"
+            required
+        >
+
+        <button ty…pe="submit">
+            Add Student
+        </button>
+
+    </form>
+
+</section>
+
+
+<section class="students">
+    <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search student...">
+    </div>
+
+    <h2>Student List</h2>
+
+    <table>
+
+        <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll No.</th>
+            <th>Course</th>
+            <th>Action</th>
+
+        </tr>
+
+
+        {% for student in students %}
+
+        <tr>
+
+            <td>{{loop.index }}</td>
+
+            <td>{{ student["name"] }}</td>
+
+            <td>{{ student["roll_no"] }}</td>
+
+            <td>{{ student["course"] }}</td>
+
+            <td>
+                <a href="/edit/{{ student['id'] }}">
+                <button class="edit">Edit</button>
+                </a>
+                <a href="/delete/{{ student['id'] }}">
+
+                    <button class="delete">
+                        Delete
+                    </button>
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</section>
+
+
+<footer>
+
+    <p>Student Management System</p>
+
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("searchInput");
+
+    if (!searchInput) {
+        return;
+    }
+
+    searchInput.addEventListener("input", function () {
+
+        const searchValue = this.value.toLowerCase().trim();
+
+        const rows = document.querySelectorAll("table tr");
+
+        rows.forEach(function (row, index) {
+
+            // Table heading ko hamesha dikhana hai
+            if (index === 0) {
+                row.style.display = "";
+                return;
+            }
+
+            const rowText = row.innerText.toLowerCase();
+
+            if (rowText.includes(searchValue)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+</script>
+</body>
+</html>
